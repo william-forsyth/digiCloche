@@ -1,1 +1,3 @@
-﻿package  {		import flash.display.MovieClip;	import flash.display;	import flash.events;			public class main extends MovieClip {				var redCircleImage = new redCircle2();				public function main() {						this.addChild(screen);			this.addChild(redCircleImage);						//trace("Test post");						begin.addEventListener(MouseEvent.CLICK, hide);		}				public function hide() {			this.removeChild(redCircleImage);			//stage.hide();					}	}	}
+﻿package {		import flash.display.*;	import flash.events.*;
+	//import Lights;			public class main extends MovieClip {
+		}}	
