@@ -67,6 +67,9 @@
 				/* Store lights in an array to use it later */
 				 
 				lights.push(light);
+				
+				
+				
 				 
 				/* Check for lights direction */
 				
