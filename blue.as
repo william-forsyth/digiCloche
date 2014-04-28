@@ -16,7 +16,6 @@
 			this.y = 0;
 			this.alpha = 1;
 			
-			
 		}
 		
 		public function fadeInT(){
@@ -31,7 +30,6 @@
 			fadeOutTimer.addEventListener(TimerEvent.TIMER, fadeOut);
 			fadeOutTimer.start();
 			
-			trace("fading out blue....");
 			
 		}
 		
@@ -46,10 +44,8 @@
 		
 		public function fadeOut(e:TimerEvent) {
 			this.alpha -= 0.1;
-			trace("blue alpha: " + this.alpha);
 			
 			if (this.alpha <= 0){
-				trace("removing blue...");
 				this.parent.removeChild(this);
 				this.fadeOutTimer.stop();
 			}

@@ -68,12 +68,21 @@
 			this.food3.rotation = 180;
 			this.drinks3.rotation = 180;
 			
+			this.food1.setID(1);
+			this.drinks1.setID(1);
+			this.food2.setID(2);
+			this.drinks2.setID(2);
+			this.food3.setID(3);
+			this.drinks3.setID(3);
+			this.food4.setID(4);
+			this.drinks4.setID(4);
+			
 			createCircle1();
 			createCircle2();
 			createCircle3();
 			createCircle4();
 			
-			stateTimer = new Timer(2000);
+			stateTimer = new Timer(4000);
 			stateTimer.addEventListener(TimerEvent.TIMER, changeState);
 			stateTimer.start();
 	
@@ -87,7 +96,6 @@
 					this.setChildIndex(redB, 0);
 					this.redB.fadeInT();
 					state++;
-					trace("Turning red");
 					break;
 				case 1:
 					this.redB.fadeOutT();
@@ -95,7 +103,6 @@
 					this.setChildIndex(orangeB, 0);
 					this.orangeB.fadeInT();
 					state++;
-					trace("Turning orange");
 					break;
 				case 2:
 					this.orangeB.fadeOutT();
@@ -103,7 +110,6 @@
 					this.setChildIndex(yellowB, 0);
 					this.yellowB.fadeInT();
 					state++;
-					trace("Turning yellow");
 					break;
 				case 3:
 					this.yellowB.fadeOutT();
@@ -111,7 +117,6 @@
 					this.setChildIndex(greenB, 0);
 					this.greenB.fadeInT();
 					state++;
-					trace("Turning green");
 					break;
 				case 4:
 					this.greenB.fadeOutT();
@@ -120,11 +125,8 @@
 					this.setChildIndex(blueB, 0);
 					this.blueB.fadeInT();
 					state = 0;
-					trace("Turning blue");
 					break;
 			}
-			
-			trace(state);
 			
 		}
 		
