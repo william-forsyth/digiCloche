@@ -21,6 +21,7 @@
 			cloudTimer = new Timer(50);
 			cloudTimer.addEventListener(TimerEvent.TIMER, moveCloud);
 			cloudTimer.start();
+			
 		}
 		
 		public function render() {

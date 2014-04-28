@@ -11,7 +11,7 @@
 		var cloudTimer:Timer;
 		var hideTimer:Timer;
 		var fadeTimer:Timer;
-		var speed = 1;
+		var speed = 2;
 		var xDir;
 		var yDir;
 		

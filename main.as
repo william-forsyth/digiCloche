@@ -1,34 +1,131 @@
 ﻿package {		import flash.display.*;	import flash.events.*;
+	import flash.utils.Timer;
+
 	//import Lights;			public class main extends MovieClip {
 		
-		var food;
-		var drinks;
+		var food1;
+		var drinks1;
+		var food2;
+		var drinks2;
+		var food3;
+		var drinks3;
+		var food4;
+		var drinks4;
+		
 		var one;
 		var two;
 		var three;
 		var four;
 		
-		var blue;
+		var blueB;
+		var redB;
+		var orangeB;
+		var yellowB;
+		var greenB;
 		
 		var state;
+		var stateTimer:Timer;
 		
 		public function main() {
 			
-			food = new foodButton();
-			drinks = new drinksButton();
-			blue = new blueBack();
+			food1 		= new foodButton(649, 844);
+			drinks1 	= new drinksButton(249, 844);
+			food2		= new foodButton(649, 204);
+			drinks2 	= new drinksButton(249, 204);
+			food3 		= new foodButton(1688, 204);
+			drinks3 	= new drinksButton(1288, 204);
+			food4 		= new foodButton(1688, 844);
+			drinks4 	= new drinksButton(1288, 844);
 			
-			this.addChild(this.blue);
+			blueB 		= new blue();
+			redB 		= new red();
+			orangeB 	= new orange();
+			yellowB 	= new yellow();
+			greenB 		= new green();
 			
-			/*this.addChild(this.food);
-			this.addChild(this.drinks);*/
+			this.addChild(this.blueB);
+			this.state = 0;
+			
+			this.addChild(this.food1);
+			this.setChildIndex(food1, 2);
+			this.addChild(this.drinks1);
+			this.setChildIndex(drinks1, 2);
+			this.addChild(this.food2);
+			this.setChildIndex(food2, 2);
+			this.addChild(this.drinks2);
+			this.setChildIndex(drinks2, 2);
+			this.addChild(this.food3);
+			this.setChildIndex(food3, 2);
+			this.addChild(this.drinks3);
+			this.setChildIndex(drinks3, 2);
+			this.addChild(this.food4);
+			this.setChildIndex(food4, 2);
+			this.addChild(this.drinks4);
+			this.setChildIndex(drinks4, 2);
+			
+			this.food2.rotation = 180;
+			this.drinks2.rotation = 180;
+			this.food3.rotation = 180;
+			this.drinks3.rotation = 180;
 			
 			createCircle1();
 			createCircle2();
 			createCircle3();
 			createCircle4();
 			
+			stateTimer = new Timer(2000);
+			stateTimer.addEventListener(TimerEvent.TIMER, changeState);
+			stateTimer.start();
 	
+		}
+		
+		public function changeState(e:TimerEvent) {
+			switch(state) {
+				case 0:
+					this.blueB.fadeOutT();
+					this.addChild(redB);
+					this.setChildIndex(redB, 0);
+					this.redB.fadeInT();
+					state++;
+					trace("Turning red");
+					break;
+				case 1:
+					this.redB.fadeOutT();
+					this.addChild(orangeB);
+					this.setChildIndex(orangeB, 0);
+					this.orangeB.fadeInT();
+					state++;
+					trace("Turning orange");
+					break;
+				case 2:
+					this.orangeB.fadeOutT();
+					this.addChild(yellowB);
+					this.setChildIndex(yellowB, 0);
+					this.yellowB.fadeInT();
+					state++;
+					trace("Turning yellow");
+					break;
+				case 3:
+					this.yellowB.fadeOutT();
+					this.addChild(greenB);
+					this.setChildIndex(greenB, 0);
+					this.greenB.fadeInT();
+					state++;
+					trace("Turning green");
+					break;
+				case 4:
+					this.greenB.fadeOutT();
+					this.addChild(blueB);
+					this.blueB.alpha = 0;
+					this.setChildIndex(blueB, 0);
+					this.blueB.fadeInT();
+					state = 0;
+					trace("Turning blue");
+					break;
+			}
+			
+			trace(state);
+			
 		}
 		
 		public function createCircle1(){

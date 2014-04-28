@@ -11,7 +11,7 @@
 		var cloudTimer:Timer;
 		var hideTimer:Timer;
 		var fadeTimer:Timer;
-		var speed = 1;
+		var speed = 2;
 		var xDir;
 		var yDir;
 		
@@ -31,6 +31,7 @@
 			
 			xDir = Math.random() * speed - speed/2;
 			yDir = Math.random() * speed - speed/2;
+			
 		}
 		
 		public function moveCloud(e:TimerEvent) {
