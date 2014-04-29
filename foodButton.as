@@ -3,6 +3,7 @@
 	import flash.ui.Mouse;
 	import flash.utils.Timer;
 	import flash.events.TimerEvent;
+	import flash.events.Event;
 			public class foodButton extends MovieClip {
 		
 		var fadeInTimer:Timer;
@@ -15,6 +16,8 @@
 			this.initialx = xPos;
 			this.initialy = yPos;
 			
+			this.alpha = 0;
+			
 			this.width = 383.3;
 			this.height = 368.8;			
 			this.addEventListener(MouseEvent.CLICK, change);
@@ -23,6 +26,8 @@
 		
 		public function change(e:MouseEvent) {
 			trace("food ID: " + this.id);
+			
+			moveMiddleT();
 		}		
 		
 		public function fadeInT(){
@@ -61,13 +66,18 @@
 			moveT = new Timer(50);
 			moveT.addEventListener(TimerEvent.TIMER, moveMiddle);
 			moveT.start();
+			
 		}
 		
 		public function moveMiddle(e:TimerEvent) {
-			this.x += 10
 			
-			if (this.x == this.initialx + 300) {
+			if (this.x <= this.initialx - 200) {
 				moveT.stop();
+			}
+			else {
+				this.x -= 10
+			
+				this.dispatchEvent(new Event("move", true, true));
 			}
 		}
 		
@@ -77,6 +87,7 @@
 		
 		public function getID() {
 			return this.id;
-		}	}
+		}
+			}	
 
 }

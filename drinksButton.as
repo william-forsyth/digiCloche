@@ -14,13 +14,17 @@
 			this.initialx = xPos;
 			this.initialy = yPos;
 			
+			this.alpha = 0;
+			
 			this.width = 383.3;
 			this.height = 368.8;
 			
 			this.addEventListener(MouseEvent.CLICK, change);					}
 		
-		public function change(e:MouseEvent) {
+		public function change(e:MouseEvent):void {
 			trace("drinks ID: " + this.id);
+			
+			this.moveMiddleT();
 			
 		}
 		
@@ -36,11 +40,11 @@
 			fadeOutTimer.addEventListener(TimerEvent.TIMER, fadeOut);
 			fadeOutTimer.start();
 			
-			
 		}
 		
 		public function fadeIn(e:TimerEvent) {
 			this.alpha += 0.1;
+			trace(this.alpha);
 			
 			if (this.alpha >= 1){
 				this.fadeInTimer.stop();
@@ -50,11 +54,14 @@
 		
 		public function fadeOut(e:TimerEvent) {
 			this.alpha -= 0.1;
+			trace(this.alpha);
 			
 			if (this.alpha <= 0){
+				trace("removing");
 				this.parent.removeChild(this);
-				this.fadeOutTimer.stop();
-			}				}
+				this.fadeOutTStop();
+			}
+							}
 		
 		public function moveMiddleT(){
 			moveT = new Timer(50);
@@ -63,10 +70,11 @@
 		}
 		
 		public function moveMiddle(e:TimerEvent) {
-			this.x += 10
-			
-			if (this.x == this.initialx + 300) {
+			if (this.x == this.initialx + 200) {
 				moveT.stop();
+			}
+			else{
+				this.x += 10
 			}
 		}
 		
@@ -76,6 +84,6 @@
 		
 		public function getID() {
 			return this.id;
-		}	}
+		}		}
 
 }

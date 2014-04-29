@@ -46,7 +46,23 @@
 			this.addChild(this.blueB);
 			this.state = 0;
 			
-			this.addChild(this.food1);
+			createCircle1();
+			createCircle2();
+			createCircle3();
+			createCircle4();
+			
+			stateTimer = new Timer(4000);
+			stateTimer.addEventListener(TimerEvent.TIMER, changeState);
+			stateTimer.start();
+			
+			stage.addEventListener("move", moveDrink);
+			
+			stage.addEventListener(KeyboardEvent.KEY_DOWN, sitDown);
+	
+		}
+		
+		public function sitDown(e:KeyboardEvent) {
+			/*this.addChild(this.food1);
 			this.setChildIndex(food1, 2);
 			this.addChild(this.drinks1);
 			this.setChildIndex(drinks1, 2);
@@ -61,9 +77,71 @@
 			this.addChild(this.food4);
 			this.setChildIndex(food4, 2);
 			this.addChild(this.drinks4);
-			this.setChildIndex(drinks4, 2);
+			this.setChildIndex(drinks4, 2);*/
 			
-			this.food2.rotation = 180;
+			switch(e.keyCode) {
+				case 38:
+					this.addChild(this.food1);
+					this.setChildIndex(food1, 2);
+					this.addChild(this.drinks1);
+					this.setChildIndex(drinks1, 2);
+				
+					this.drinks1.fadeInT();
+					this.food1.fadeInT();
+				
+					this.food1.setID(1);
+					this.drinks1.setID(1);
+				
+					break;
+				case 37:
+					this.addChild(this.food2);
+					this.setChildIndex(food2, 2);
+					this.addChild(this.drinks2);
+					this.setChildIndex(drinks2, 2);
+				
+					this.food2.rotation = 180;
+					this.drinks2.rotation = 180;
+				
+					this.drinks2.fadeInT();
+					this.food2.fadeInT();
+				
+					this.food2.setID(2);
+					this.drinks2.setID(2);
+					
+					break;
+				case 39:
+					this.addChild(this.food3);
+					this.setChildIndex(food3, 2);
+					this.addChild(this.drinks3);
+					this.setChildIndex(drinks3, 2);
+				
+					this.food3.rotation = 180;
+					this.drinks3.rotation = 180;
+				
+					this.drinks3.fadeInT();
+					this.food3.fadeInT();
+				
+					this.food3.setID(3);
+					this.drinks3.setID(3);
+				
+					break;
+				case 40:
+					this.addChild(this.food4);
+					this.setChildIndex(food4, 2);
+					this.addChild(this.drinks4);
+					this.setChildIndex(drinks4, 2);
+				
+					this.drinks4.fadeInT();
+					this.food4.fadeInT();
+				
+					this.food4.setID(4);
+					this.drinks4.setID(4);
+				
+					break;
+					
+			}
+			
+			/*this.food2.rotation = 180;
 			this.drinks2.rotation = 180;
 			this.food3.rotation = 180;
 			this.drinks3.rotation = 180;
@@ -75,17 +153,7 @@
 			this.food3.setID(3);
 			this.drinks3.setID(3);
 			this.food4.setID(4);
-			this.drinks4.setID(4);
-			
-			createCircle1();
-			createCircle2();
-			createCircle3();
-			createCircle4();
-			
-			stateTimer = new Timer(4000);
-			stateTimer.addEventListener(TimerEvent.TIMER, changeState);
-			stateTimer.start();
-	
+			this.drinks4.setID(4);*/
 		}
 		
 		public function changeState(e:TimerEvent) {
@@ -155,10 +223,25 @@
 		}
 		
 		public function createCircle4(){
-			for (var i = 0; i < 1; i++) {
+			for (var i = 0; i < 2; i++) {
 				four = new circle4(1);
 
 				this.addChild(this.four);
 			}
 		}
-				}}	
+		
+		public function getChildren(target:DisplayObjectContainer):Array {
+			var children:Array = [];
+
+			for (var i:uint = 0; i < target.numChildren; i++)
+				children.push(target.getChildAt(i));
+
+			return children;
+		}
+		
+		public function moveDrink(event:Event) {
+			this.drinks1.fadeOutT();
+			
+		}
+		
+			}}	
