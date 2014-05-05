@@ -21,8 +21,6 @@
 			cloudTimer = new Timer(50);
 			cloudTimer.addEventListener(TimerEvent.TIMER, moveCloud);
 			cloudTimer.start();
-			
-			trace("Width is equal to: " + this.width + "Height is equal to: " + this.height);
 		
 		}
 		

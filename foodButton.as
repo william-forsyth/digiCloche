@@ -4,9 +4,7 @@
 	import flash.utils.Timer;
 	import flash.events.TimerEvent;
 	import flash.events.Event;
-	import pq.multitouch.*;
-	import pq.multitouch.manipulators.*;
-	import pq.multitouch.events.PQTouchEvent;		public class foodButton extends MovieClip {
+			public class foodButton extends MovieClip {
 		
 		var fadeInTimer:Timer;
 		var fadeOutTimer:Timer;
@@ -21,14 +19,12 @@
 			this.alpha = 0;
 			
 			this.width = 383.3;
-			this.height = 368.8;
+			this.height = 368.8;			
+			this.addEventListener(MouseEvent.CLICK, change);
 			
-			//Multitouch.init();			
-			//this.addEventListener(MouseEvent.CLICK, change);
-			this.addEventListener(PQTouchEvent.TOUCH_DOWN, change);
 		}
 		
-		public function change(e:PQTouchEvent) {
+		public function change(e:MouseEvent) {
 			trace("food ID: " + this.id);
 			
 			moveMiddleT();
@@ -77,13 +73,11 @@
 			
 			if (this.x <= this.initialx - 200) {
 				moveT.stop();
-				
-				this.dispatchEvent(new Event("move", true, true));
 			}
 			else {
 				this.x -= 10
 			
-				
+				this.dispatchEvent(new Event("move", true, true));
 			}
 		}
 		
