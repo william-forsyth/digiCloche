@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:WindowedApplication xmlns:mx="http://www.adobe.com/2006/mxml" 
+	layout="absolute" applicationComplete="onComplete();">
+	<mx:Script>
+		<![CDATA[
+				
+			import mx.controls.Alert;
+			
+			import pq.multitouch.*;
+			import pq.multitouch.events.*;
+			import pq.multitouch.gestures.*;
+			
+			
+			private function onComplete():void
+			{													
+				MultiTouch.init(this, connectFailed);										
+				
+				stage.addChild(TouchViewer.getInstance());
+								
+				MultiTouch.enableGesture(MyCanvas, new SingleDownGesture(), onDebugGesture);
+	            MultiTouch.enableGesture(MyCanvas, new SingleMoveGesture(), onDebugGesture);
+	            MultiTouch.enableGesture(MyCanvas, new SingleUpGesture(), onDebugGesture);
+	            MultiTouch.enableGesture(MyCanvas, new SingleTouchGesture(), onDebugGesture);
+	            MultiTouch.enableGesture(MyCanvas, new SingleClickGesture(), onDebugGesture);
+	
+	            MultiTouch.enableGesture(MyCanvas, new SecondDownGesture(), onDebugGesture);
+	            MultiTouch.enableGesture(MyCanvas, new SecondUpGesture(), onDebugGesture);
+	            MultiTouch.enableGesture(MyCanvas, new SecondClickGesture(), onDebugGesture);
+	
+	            MultiTouch.enableGesture(MyCanvas, new DualDownGesture(), onDebugGesture);
+	            MultiTouch.enableGesture(MyCanvas, new DualMoveGesture(), onDebugGesture);
+	            MultiTouch.enableGesture(MyCanvas, new OnePauseOneMoveGesture(), onDebugGesture);
+	            MultiTouch.enableGesture(MyCanvas, new DualUpGesture(), onDebugGesture);
+	            MultiTouch.enableGesture(MyCanvas, new DualClickGesture(), onDebugGesture);
+	
+	            MultiTouch.enableGesture(MyCanvas, new MultiDownGesture(), onDebugGesture);
+	            MultiTouch.enableGesture(MyCanvas, new MultiMoveGesture(), onDebugGesture);
+	            MultiTouch.enableGesture(MyCanvas, new MultiUpGesture(), onDebugGesture);
+            	
+            	////////////////////////////////////////////////////////////////////
+            	MultiTouch.enableGesture(MyCanvas, new FlickGesture(), onFlick);
+            	
+            	var dragMoveGes:DragMoveGesture = new DragMoveGesture();
+				dragMoveGes.minTouchCount = 1;
+				dragMoveGes.maxTouchCount = 1;
+				MultiTouch.enableGesture(MyCanvas,dragMoveGes, onDrag);
+				
+            	MultiTouch.enableGesture(MyCanvas,new ZoomGesture(), onZoom);
+            	var gestrue:BaseGesture = MultiTouch.enableGesture(MyCanvas,new RotateGesture(), onRotate);		
+            	
+            	MultiTouch.disableGesture( gestrue );
+            	
+            	var manipulateGes:ManipulateGesture = new ManipulateGesture();
+				manipulateGes.minTouchCount = 4;
+				manipulateGes.maxTouchCount = 10;
+				MultiTouch.enableGesture(MyCanvas, manipulateGes, onManipulate);	
+            	
+            	// NOTE: you can disable all gestures that registered to a display object.
+            	//MultiTouch.disableAllGesture(MyCanvas);               		         
+			}								
+			
+			private function connectFailed():void
+			{
+				Alert.show("Failed to connect with PQ-Multi-Touch Server!");
+			}
+			
+			private function onDebugGesture(e:BaseGestureEvent):void
+			{		
+				// NOTE: you can get local touch blobs in this way, too.		
+//				for (var i:int = 0; i < e.touchBlobs.length; i++)
+//	            {                
+//	                var bi:Blob = e.touchBlobs[i];
+//	                if( bi )trace(bi.toString());
+//	            }
+//				trace("onDebugGesture" + e.toString());
+				
+				// NOTE: we strongly recommanded that you stop the propagation immediately. 
+				e.stopImmediatePropagation();				
+			}
+			
+			private function onFlick(e:FlickEvent):void
+			{
+				if( e.direction == Direction.DOWN )
+				{					
+					trace(" onFlick : " +  e.direction );
+				}
+				e.stopImmediatePropagation();
+			}
+			
+			private function onDrag(e:DragMoveEvent):void
+			{							
+				MyCanvas.x += e.deltaOffsetX;
+				MyCanvas.y += e.deltaOffsetY;
+				e.stopImmediatePropagation();
+			}
+			
+			private function onZoom(e:ZoomEvent):void
+			{				
+				MyCanvas.scaleX *= e.deltaScale;
+				MyCanvas.scaleY *= e.deltaScale;				
+				e.stopImmediatePropagation();
+			}
+			
+			private function onRotate(e:RotateEvent):void
+			{				
+				MyCanvas.rotation += e.deltaAngle*180/Math.PI;
+				e.stopImmediatePropagation();
+			}
+			
+			private function onManipulate(e:ManipulateEvent):void
+			{
+				MyCanvas.x += e.deltaVector.x;
+				MyCanvas.y += e.deltaVector.y;
+				MyCanvas.scaleX *= e.deltaScale;
+				MyCanvas.scaleY *= e.deltaScale;
+				MyCanvas.rotation += e.deltaAngle*180/Math.PI;
+				e.stopImmediatePropagation();
+			}
+			
+		]]>
+	</mx:Script>
+	<mx:Canvas id="MyCanvas" backgroundColor="0x0000FF" x="300" y="300" width="400" height="400"/>		
+</mx:WindowedApplication>

@@ -4,6 +4,7 @@
 	import flash.utils.Timer;
 	import flash.events.TimerEvent;
 	import flash.events.Event;
+	import pq.multitouch.*;
 			public class foodButton extends MovieClip {
 		
 		var fadeInTimer:Timer;

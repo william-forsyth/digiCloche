@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					   xmlns:s="library://ns.adobe.com/flex/spark" 
+					   xmlns:mx="library://ns.adobe.com/flex/mx"
+					   applicationComplete="onComplete()" backgroundColor="0">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	
+	<fx:Script>
+		<![CDATA[
+			import customGesture.*;
+			
+			import pq.multitouch.*;
+			import pq.multitouch.manipulators.*;
+			
+			private function onComplete():void
+			{
+				MultiTouch.init(this);		
+				stage.addChild(TouchViewer.getInstance());
+				MultiTouch.enableGesture(image, new CustomFlickGesture(), onFlick);																									
+			}			
+			private function onFlick(e:CustomFlickEvent):void
+			{
+				trace(e.direction);
+			}
+		]]>
+	</fx:Script>
+	<mx:Image id="image" source="assets/1.png" />
+</s:WindowedApplication>

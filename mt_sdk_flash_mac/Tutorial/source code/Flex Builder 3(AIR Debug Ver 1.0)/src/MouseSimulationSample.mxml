@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:WindowedApplication xmlns:mx="http://www.adobe.com/2006/mxml"
+	layout="absolute" applicationComplete="onComplete();">
+	<mx:Script>
+		<![CDATA[
+			
+			import pq.multitouch.*;
+			
+			private function onComplete():void
+			{				
+				MultiTouch.init(this);
+				stage.addChild(TouchViewer.getInstance());									
+				// Enable mouse simulation gesture to the two buttons.				
+				MultiTouch.enableMouseSimulation(clickme1);
+				MultiTouch.enableMouseSimulation(clickme2);									
+			}
+				
+			private function OnClick1():void 
+			{															
+				testlabel1.text="TouchMe1 Clicked!";	
+				trace(" OnClick1 ... ");
+			}
+			
+			private function OnClick2():void 
+			{				
+				testlabel2.text="TouchMe2 Clicked!";
+				trace(" OnClick2 ... ");
+			}
+			
+			private function OnMouseDown1(event:MouseEvent):void
+			{
+				trace(" OnMouseDown1 ... ");
+			}
+			
+			private function OnMouseDown2(event:MouseEvent):void
+			{
+				trace(" OnMouseDown2 ... ");	
+			}
+			
+			private function OnMouseUp1(event:MouseEvent):void
+			{
+				trace(" OnMouseUp1 ... ");				
+			}
+			
+			private function OnMouseUp2(event:MouseEvent):void
+			{
+				trace(" OnMouseUp2 ... ");	
+			}
+		]]>
+	</mx:Script>
+	<mx:HBox verticalCenter="0" horizontalCenter="0">
+		<mx:VBox horizontalCenter="-300" verticalCenter="0" >
+			<mx:Label id="testlabel1" width="200" height="40"/>
+			<mx:Button id="clickme1" label="TouchMe1" 
+				mouseDown="OnMouseDown1(event)" mouseUp="OnMouseUp1(event)" 
+				click="OnClick1()" width="200" height="80"/>	
+		</mx:VBox>
+		<mx:VBox horizontalCenter="-300" verticalCenter="0" >
+			<mx:Label id="testlabel2" width="200" height="40"/>
+			<mx:Button id="clickme2" label="TouchMe2" 
+				mouseDown="OnMouseDown2(event)" mouseUp="OnMouseUp2(event)"
+				click="OnClick2()" width="200" height="80"/>	
+		</mx:VBox>	
+	</mx:HBox>
+</mx:WindowedApplication>
