@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:WindowedApplication xmlns:mx="http://www.adobe.com/2006/mxml" 
+	horizontalScrollPolicy="off" verticalScrollPolicy="off" frameRate="60"
+	layout="absolute" 
+	backgroundColor="0" applicationComplete="onComplete();">
+	<mx:Script>
+		<![CDATA[
+						
+			import pq.multitouch.*;
+			import pq.multitouch.events.*;
+			import pq.multitouch.gestures.*;
+			
+			private var sprite:Sprite = new Sprite();
+			
+			private function onComplete():void{							
+				
+				MultiTouch.init(this);
+				
+				var rect:Shape = new Shape();
+				rect.graphics.beginFill(0xFF);
+				rect.graphics.drawRect(0,0,320,240);
+				rect.graphics.endFill();
+				
+				rect.x = -160;
+				rect.y = -120;
+									
+				var center:Shape = new Shape();
+				center.graphics.beginFill(0xFF0000);				
+				center.graphics.drawCircle(0,0,5);
+				center.graphics.endFill();
+				
+				sprite.addChild( rect );				
+				sprite.addChild( center );
+									
+				host.addChild(sprite);
+				sprite.x = 400;
+				sprite.y = 400;			
+				
+				MultiTouch.enableGesture(sprite, new ManipulateGesture(), onManipulate);
+					
+			}	
+			
+			private function onManipulate(e:ManipulateEvent):void
+			{
+				//trace( e.toString() );
+				
+//				sprite.x += e.deltaVector.x;
+//				sprite.y += e.deltaVector.y;
+				sprite.scaleX *= e.deltaScale;
+				sprite.scaleY *= e.deltaScale;				
+				sprite.rotation += e.deltaAngle/Math.PI*180;
+				
+				// NOTE: we strongly recommanded that you stop the propagation immediately.
+				e.stopImmediatePropagation();				
+			}
+			
+		]]>
+	</mx:Script>
+	<mx:UIComponent width="100%" height="100%" id="host" />
+</mx:WindowedApplication>

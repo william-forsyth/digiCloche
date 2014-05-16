@@ -1,0 +1,254 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="BaseGesture,pq.multitouch.gestures.BaseGesture" name="keywords">
+<title>pq.multitouch.gestures.BaseGesture</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'BaseGesture - PQMultiTouch API Documentation';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">PQMultiTouch API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;<!--|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;-->|&nbsp;<a href="../../../index.html?pq/multitouch/gestures/BaseGesture.html&amp;pq/multitouch/gestures/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="PQLabs Logo" title="PQLabs Logo" class="logoImage" src="../../../images/logo.png"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;BaseGesture</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#constantsSummary">Constants</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class BaseGesture"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">pq.multitouch.gestures</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class BaseGesture</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td>
+<td class="inheritanceList">BaseGesture <img src="../../../images/inherit-arrow.gif" alt="Inheritance" width="15" height="9" class="inheritArrow" title="Inheritance">Object</td>
+</tr>
+</table>
+<p></p>
+ The BaseGesture class is the base class for all touch gestures and manipulators.
+ <p></p>
+ <br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td>
+<td class="summaryTableSignatureCol"><a class="signatureLink" href="#touchManager">touchManager</a> : TouchManager
+  <div class="summaryTableDescription">[read-only]Get the TouchManager instance of current gesture. </div>
+</td><td class="summaryTableOwnerCol">BaseGesture</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td>
+<td class="summaryTableSignatureCol"><a class="signatureLink" href="#obj">obj</a> : DisplayObject
+  <div class="summaryTableDescription">[read-only]Get the DisplayObject under this BaseGesture instance's control.</div>
+</td><td class="summaryTableOwnerCol">BaseGesture</td>
+</tr>
+
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+  <a class="signatureLink" href="#BaseGesture()">BaseGesture</a>():void</div>
+<div class="summaryTableDescription">BaseGesture class is the base class for all touch gestures and manipulators.</div>
+</td><td class="summaryTableOwnerCol">BaseGesture</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td>
+<td class="summaryTableSignatureCol">
+<div class="summarySignature">
+  <a class="signatureLink" href="#touchDownHandler()">touchDownHandler</a>(e:PQTouchEvent):void</div>
+<div class="summaryTableDescription">Overwrite touchDownHandler to implement your own TouchDown logic.</div>
+</td>
+<td class="summaryTableOwnerCol">BaseGesture</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td>
+<td class="summaryTableSignatureCol">
+<div class="summarySignature">
+  <a class="signatureLink" href="#touchMoveHandler()">touchMoveHandler</a>(e:PQTouchEvent):void</div>
+<div class="summaryTableDescription">Overwrite touchMoveHandler to implement your own TouchMove logic.</div>
+</td>
+<td class="summaryTableOwnerCol">BaseGesture</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td>
+<td class="summaryTableSignatureCol">
+<div class="summarySignature">
+  <a class="signatureLink" href="#touchUpHandler()">touchUpHandler</a>(e:PQTouchEvent):void</div>
+<div class="summaryTableDescription">Overwrite TouchUpHandler to implement your own TouchUp logic.</div>
+</td>
+<td class="summaryTableOwnerCol">BaseGesture</td>
+</tr>
+
+</table>
+</div>
+
+
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+
+<a name="touchManager"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">touchManager</td>
+<td class="detailHeaderType">property</td>
+<td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+  <code>touchManager:TouchManager</code>
+  [read-only] 
+  <p><span class="summaryTableDescription">Get the TouchManager instance of current gesture. </span></p>
+  </p><span class="label">Implementation</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><p>public function get <code>touchManager</code>():<code>TouchManager</code></p>
+  </td>
+</tr>
+</table>
+
+</div>
+
+<a name="obj"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">obj</td>
+<td class="detailHeaderType">property</td>
+<td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+ <code>obj:<span class="summaryTableSignatureCol">DisplayObject</span><code></code> [read-only] </code>
+ <p><span class="summaryTableDescription">Get the DisplayObject under this BaseGesture instance's control.</span></p>
+ </p><span class="label">Implementation</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><p>public function get <code> obj</code>():<code><span class="summaryTableSignatureCol">DisplayObject</span></code></p>
+  </td>
+</tr>
+</table>
+</div>
+
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+
+<a name="#touchDownHandler()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName"><p>touchDownHandler</p>
+  </td>
+<td class="detailHeaderParens">()</td>
+<td class="detailHeaderType">method</td>
+<td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public virtual function touchDownHandler(e:PQTouchEvent):void</code>
+<p><span class="summaryTableDescription">Overwrite touchDownHandler to implement your own TouchDown logic.</span></p>
+<span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><code><span class="label">e</span>:PQTouchEvent</code> &mdash;  touch event instance. </td>
+</tr>
+</table>
+</div>
+
+<a name="#touchMoveHandler()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">touchMoveHandler</td>
+<td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+<td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public virtual function touchMoveHandler(e:PQTouchEvent):void</code>
+<p><span class="summaryTableDescription">Overwrite touchMoveHandler to implement your own TouchMove logic.</span></p>
+<span class="label">Parameters</span>
+</p>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><code><span class="label">e</span></code><code>:PQTouchEvent</code> &mdash;  touch event instance. </td>
+</tr>
+</table>
+</div>
+
+<a name="#touchUpHandler()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">touchUpHandler</td>
+<td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+<td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public virtual function touchUpHandler(e:PQTouchEvent):void</code>
+<p><span class="summaryTableDescription">Overwrite touchUpHandler to implement your own TouchUp logic.</span></p>
+<span class="label">Parameters</span>
+</p>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><code><span class="label">e</span></code><code>:PQTouchEvent</code> &mdash;  touch event instance. </td>
+</tr>
+</table>
+</div>
+
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">
+<br>Aug 5  2010, PQLabs</center>
+</div>
+</body>
+</html>

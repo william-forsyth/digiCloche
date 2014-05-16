@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:WindowedApplication xmlns:mx="http://www.adobe.com/2006/mxml" 
+	horizontalScrollPolicy="off" verticalScrollPolicy="off" frameRate="60"
+	layout="absolute" backgroundColor="0" applicationComplete="onComplete();">
+	<mx:Script>
+		<![CDATA[			
+			 
+			import pq.multitouch.*;
+			import pq.multitouch.manipulators.*;
+			
+			private function onComplete():void
+			{
+				MultiTouch.init(this);									
+				stage.addChild(TouchViewer.getInstance());
+				
+//				MultiTouch.enableGesture(image, new MultiDragScaleRotate());				
+				var bounds:Rectangle = new Rectangle(0,0,this.stage.stageWidth,this.stage.stageHeight);
+				MultiTouch.enableGesture(image, new MultiDragScaleRotate(true,true,true,true,bounds,300,2000));
+				
+//				MultiTouch.enableGesture(canv, new DragScaleRotate());				
+				MultiTouch.enableGesture(canv, new DragScaleRotate(true,true,true,true,bounds,300,2000));								
+			}					
+		]]>
+	</mx:Script>
+	<mx:Image id="image" source="assets/1.png"/>	
+	
+	<mx:Canvas id="canv" width="300" height="300" backgroundColor="0x0000FF" x="400" y="300"/>
+</mx:WindowedApplication>

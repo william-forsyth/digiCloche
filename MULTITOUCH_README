@@ -1,0 +1,42 @@
+********************************************************************************
+********************************************************************************
+
+MULTITOUCH READ ME
+
+********************************************************************************
+********************************************************************************
+
+To use the multitouch library in your classes, please ensure the following:
+
+1)  Check that flash is reading from the PQMultiTouch SDK.
+
+    Go to Flash > Preferences > Compiler
+
+    Make sure that Library and External ibrary are directing from the .swc file
+    located in the repository. E.G:
+
+    /Users/WilliamForsyth/Documents/DECO3850/code/digiCloche/PQMultiTouch.swc
+
+    The .swc file is in the repository. Use that one, try not to point to your
+    own copy.
+
+2)  In your class, import the library. The library files can be found by:
+
+    import pq.multitouch. ...
+
+    You can import the entire library by going
+
+    import pq.multitouch.*;
+
+3)  Add appropriate event handlers within your class file. For instance, if you
+    are adding just a simple mouse click use:
+
+    MultiTouch.enableMouseSimulation(this);
+
+    You can use standard MouseEvent listeners by applying the above.
+
+    For dragging and other multitouch events, you can use:
+
+    MultiTouch.enableGesture(this,new MultiDragScaleRotate());
+
+4)  If anything is not working, ask Will.

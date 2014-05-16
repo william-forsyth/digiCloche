@@ -1,0 +1,544 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="Blob,pq.multitouch.Blob" name="keywords">
+<title>pq.multitouch.Blob</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'Blob - MultiTouch API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">PQMultiTouch API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;<!--|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;-->|&nbsp;<a href="../../index.html?pq/multitouch/Blob.html&amp;pq/multitouch/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="PQLabs Logo" title="PQLabs Logo" class="logoImage" src="../../images/logo.png"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;Blob</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class Blob"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">pq.multitouch</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class Blob</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td>
+<td class="inheritanceList">Blob <img src="../../images/inherit-arrow.gif" alt="Inheritance" width="15" height="9" class="inheritArrow" title="Inheritance">Object</td></tr>
+</table>
+<p></p>
+The Blob class hold the information of touch blobs, like touchID, postion, size, etc.
+<p></p>
+<br>
+<hr>
+</div>
+
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td>
+<td class="summaryTableSignatureCol"><a class="signatureLink" href="#id">id</a> : uint
+  <div class="summaryTableDescription">[read-only]Get the touchID of current touch blob instance.</div>
+</td><td class="summaryTableOwnerCol">Blob</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td>
+<td class="summaryTableSignatureCol"><a class="signatureLink" href="#x">x</a> : Number
+  <div class="summaryTableDescription">[read-only]Indicates the center X-position of the touch blob instance in current frame, in screen coordinate.</div>
+</td><td class="summaryTableOwnerCol">Blob</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td>
+<td class="summaryTableSignatureCol"><a class="signatureLink" href="#y">y</a> : Number
+  <div class="summaryTableDescription">[read-only]Indicates the center Y-position of the touch blob instance in current frame, in screen coordinate.</div>
+</td><td class="summaryTableOwnerCol">Blob</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td>
+<td class="summaryTableSignatureCol"><a class="signatureLink" href="#center">center</a> : Point
+  <div class="summaryTableDescription">[read-only]Indicates the center position of the touch blob instance in current frame, in screen coordinate.</div>
+</td><td class="summaryTableOwnerCol">Blob</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td>
+<td class="summaryTableSignatureCol"><a class="signatureLink" href="#width">width</a> : Number
+  <div class="summaryTableDescription">[read-only]Indicates the width of the touch blob instance.</div>
+</td><td class="summaryTableOwnerCol">Blob</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td>
+<td class="summaryTableSignatureCol"><a class="signatureLink" href="#height">height</a> : Number
+  <div class="summaryTableDescription">[read-only]Indicates the height of the touch blob instance.</div>
+</td><td class="summaryTableOwnerCol">Blob</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td>
+<td class="summaryTableSignatureCol"><a class="signatureLink" href="#lastX">lastX</a> : Number
+  <div class="summaryTableDescription">[read-only]Indicates the center X-position of the touch blob instance in last frame, in screen coordinate.</div>
+</td><td class="summaryTableOwnerCol">Blob</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td>
+<td class="summaryTableSignatureCol"><a class="signatureLink" href="#lastY">lastY</a> : Number
+  <div class="summaryTableDescription">[read-only]Indicates the center Y-position of the touch blob instance in last frame, in screen coordinate.</div>
+</td><td class="summaryTableOwnerCol">Blob</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td>
+<td class="summaryTableSignatureCol"><a class="signatureLink" href="#downX">downX</a> : Number
+  <div class="summaryTableDescription">[read-only]Indicates the touch down X-position of the touch blob instance, in screen coordinate.</div>
+</td><td class="summaryTableOwnerCol">Blob</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td>
+<td class="summaryTableSignatureCol"><a class="signatureLink" href="#downY">downY</a> : Number
+  <div class="summaryTableDescription">[read-only]Indicates the touch down Y-position of the touch blob instance in last frame, in screen coordinate.</div>
+</td><td class="summaryTableOwnerCol">Blob</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td>
+<td class="summaryTableSignatureCol">
+<a class="signatureLink" href="#frameID">frameID</a> : Number
+<div class="summaryTableDescription">[read-only]Get the frameID of current touch blob instance.</div>
+</td><td class="summaryTableOwnerCol">Blob</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td>
+<td class="summaryTableSignatureCol">
+<a class="signatureLink" href="#downFrameID">downFrameID</a> : Number
+<div class="summaryTableDescription">[read-only]Get the frameID  indicates which frame the touch blob is down.</div>
+</td><td class="summaryTableOwnerCol">Blob</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td>
+<td class="summaryTableSignatureCol">
+<a class="signatureLink" href="#downObj">downObj</a> : DisplayObject
+<div class="summaryTableDescription">[read-only]Get the display object that lie under the touch blob when it touch down. 
+No matter where this touch blob moves to, this value will not change.</div>
+</td><td class="summaryTableOwnerCol">Blob</td>
+</tr>
+
+</table>
+</div>
+
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td>
+<td class="summaryTableSignatureCol">
+<a class="signatureLink" href="#Blob()">Blob</a>(touchId:uint,screenX:Number,screenY:Number,width:Number,height:Number,frameId:Number, downObj:DisplayObject):void
+<div class="summaryTableDescription">The Blob class hold the information of touch blobs, like touchID, position, size, etc. </div>
+</td><td class="summaryTableOwnerCol">Blob</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td>
+<td class="summaryTableSignatureCol">
+<div class="summarySignature">
+  <a class="signatureLink" href="#clone()">clone</a>():Blob
+</div>
+<div class="summaryTableDescription">Creates a copy of the Blob object and sets the value of each property to match that of the original.</div>
+</td>
+<td class="summaryTableOwnerCol">Blob</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td>
+<td class="summaryTableSignatureCol">
+<div class="summarySignature">
+  <a class="signatureLink" href="#toString()">toString</a>():String
+</div>
+<div class="summaryTableDescription">Returns a string that contains properties of the Blob object.</div>
+</td>
+<td class="summaryTableOwnerCol">Blob</td>
+</tr>
+
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+
+<a name="id"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">id</td>
+<td class="detailHeaderType">property</td>
+<td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+ <code>id:<span class="summaryTableSignatureCol">uint</span><code></code> [read-only] </code>
+ <p><span class="summaryTableDescription">Get the touchID of current touch blob instance.</span></p>
+ </p><span class="label">Implementation</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><p>public function get <code> id </code>():<code><span class="summaryTableSignatureCol">uint</span></code></p>
+  </td>
+</tr>
+</table>
+</div>
+
+<a name="x"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">x</td>
+<td class="detailHeaderType">property</td>
+<td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+ <code>x:Number<code></code> [read-only] </code>
+ <p><span class="summaryTableDescription">Indicates the center X-position of the touch blob instance in current frame, in screen coordinate.</span></p>
+ </p><span class="label">Implementation</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><p>public function get <code> x </code>():<code><span class="summaryTableSignatureCol">Number</span></code></p>
+  </td>
+</tr>
+</table>
+</div>
+
+<a name="y"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">y</td>
+<td class="detailHeaderType">property</td>
+<td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+ <code>y:Number<code></code> [read-only] </code>
+ <p><span class="summaryTableDescription">Indicates the center Y-position of the touch blob instance in current frame, in screen coordinate.</span></p>
+ </p><span class="label">Implementation</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><p>public function get <code> y </code>():<code><span class="summaryTableSignatureCol">Number</span></code></p>
+  </td>
+</tr>
+</table>
+</div>
+
+<a name="center"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">center</td>
+<td class="detailHeaderType">property</td>
+<td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+  <code>center:Point</code>
+  [read-only] 
+  <p><span class="summaryTableDescription">Indicates the center position of the touch blob instance in current frame, in screen coordinate.</span></p>
+  </p><span class="label">Implementation</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><p>public function get <code>center</code>():<code>Point</code></p>
+  </td>
+</tr>
+</table>
+</div>
+
+<a name="width"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">width</td>
+<td class="detailHeaderType">property</td>
+<td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+  <code>width:Number</code>
+  [read-only] 
+  <p><span class="summaryTableDescription">Indicates the width of the touch blob instance.</span></p>
+  </p><span class="label">Implementation</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><p>public function get <code>width</code>():<code>Number</code></p>
+  </td>
+</tr>
+</table>
+</div>
+
+<a name="height"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">height</td>
+<td class="detailHeaderType">property</td>
+<td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+  <code>frameID:Array</code>
+  [read-only] 
+  <p><span class="summaryTableDescription">Indicates the height of the touch blob instance.</span></p>
+  </p><span class="label">Implementation</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><p>public function get <code>height</code>():<code>Number</code></p>
+  </td>
+</tr>
+</table>
+</div>
+
+<a name="lastX"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">lastX</td>
+<td class="detailHeaderType">property</td>
+<td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+  <code>lastX:Number</code>
+  [read-only] 
+  <p><span class="summaryTableDescription">Indicates the center X-position of the touch blob instance in last frame, in screen coordinate.</span></p>
+  </p><span class="label">Implementation</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><p>public function get <code> lastX</code>():<code>Number</code></p>
+  </td>
+</tr>
+</table>
+</div>
+
+<a name="lastY"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">lastY</td>
+<td class="detailHeaderType">property</td>
+<td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+  <code>lastY:Number</code>
+  [read-only] 
+  <p><span class="summaryTableDescription">Indicates the center Y-position of the touch blob instance in last frame, in screen coordinate.</span></p>
+  </p><span class="label">Implementation</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><p>public function get <code> lastY</code>():<code>Number</code></p>
+  </td>
+</tr>
+</table>
+</div>
+
+<a name="downX"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">downX</td>
+<td class="detailHeaderType">property</td>
+<td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+  <code>downX:Number</code>
+  [read-only] 
+  <p><span class="summaryTableDescription">Indicates the touch down X-position of the touch blob instance, in screen coordinate.</span></p>
+  </p><span class="label">Implementation</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><p>public function get <code>downX</code>():<code>Number</code></p>
+  </td>
+</tr>
+</table>
+</div>
+
+<a name="downY"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">downY</td>
+<td class="detailHeaderType">property</td>
+<td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+  <code>downY:Number</code>
+  [read-only] 
+  <p><span class="summaryTableDescription">Indicates the touch down X-position of the touch blob instance, in screen coordinate.</span></p>
+  </p><span class="label">Implementation</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><p>public function get <code>downY</code>():<code>Number</code></p>
+  </td>
+</tr>
+</table>
+</div>
+
+<a name="frameID"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">frameID</td>
+<td class="detailHeaderType">property</td>
+<td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+  <code>frameID:Number</code>
+  [read-only] 
+  <p><span class="summaryTableDescription">Get the frameID of current touch blob instance.</span></p>
+  </p><span class="label">Implementation</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><p>public function get <code>frameID</code>():<code>Number</code></p>
+  </td>
+</tr>
+</table>
+</div>
+
+<a name="downFrameID"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">downFrameID</td>
+<td class="detailHeaderType">property</td>
+<td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+  <code>downFrameID:Number</code>
+  [read-only] 
+  <p><span class="summaryTableDescription">Get the frameID  indicates which frame the touch blob is down.</span></p>
+  </p><span class="label">Implementation</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><p>public function get <code> downFrameID</code>():<code>Number</code></p>
+  </td>
+</tr>
+</table>
+</div>
+
+<a name="downObj"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">downObj</td>
+<td class="detailHeaderType">property</td>
+<td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+  <code>downObj:DisplayObject</code>
+  [read-only] 
+  <p><span class="summaryTableDescription">Get the display object that lie under the touch blob when it touch down. 
+No matter where this touch blob moves to, this value will not change.</span></p>
+  </p><span class="label">Implementation</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><p>public function get <code>downObj</code>():<code>DisplayObject</code></p>
+  </td>
+</tr>
+</table>
+</div>
+
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+
+<a name="#clone()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName"><p>clone</p>
+  </td>
+<td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+<td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function clone():Blob</code>
+<p><span class="summaryTableDescription">Creates a copy of the Blob object and sets the value of each property to match that of the original.</span></p>
+<span class="label">Returns</span></p>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><code><span class="label">Blob</span> &mdash;</code> A new Blob object with property values that match those of the original.</td>
+</tr>
+</table>
+</div>
+
+<a name="#toString()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">toString</td>
+<td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+<td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function toString():String</code>
+<p>Returns a string that contains properties of the Blob object. The string is in the following format: 
+[Blob frameID=value touchID=value x=value ... isMoving=value]  </p>
+<span class="label">Returns</span></p>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><code><span class="label">String</span> &mdash;</code> properties string of the Blob object.</td>
+</tr>
+</table>
+</div>
+
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">
+<br>Aug 5  2010, PQLabs</center>
+</div>
+</body>
+</html>

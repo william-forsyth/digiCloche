@@ -1,0 +1,358 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="MultiTouch,pq.multitouch.MultiTouch" name="keywords">
+<title>pq.multitouch.MultiTouch</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'MultiTouch - MultiTouch API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">PQMultiTouch API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;<!--|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;-->|&nbsp;<a href="../../index.html?pq/multitouch/MultiTouch.html&amp;pq/multitouch/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="PQLabs Logo" title="PQLabs Logo" class="logoImage" src="../../images/logo.png"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;MultiTouch</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class MultiTouch"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">pq.multitouch</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class MultiTouch</td>
+</tr>
+</table>
+<p></p>
+The MultiTouch class contains global controls of multi-touch lib.
+<p></p>
+<br>
+<hr>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#init()">init</a>(appContainer:DisplayObjectContainer,connectFailCallBack:Function=null):void</div>
+<div class="summaryTableDescription">[static]
+ Connect to Multi-Touch Server and initialize.</div>
+</td><td class="summaryTableOwnerCol">MultiTouch</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#enableGesture()">enableGesture</a>(obj:DisplayObject,gesture:BaseGesture, 
+listener:Function=null,isStopPropagation:Boolean=true):BaseGesture</div>
+<div class="summaryTableDescription">[static]
+ Registers a gesture event listener object with a DisplayObject instance so that the DisplayObject instance can receive notification of a certain gesture event.  </div>
+</td><td class="summaryTableOwnerCol">MultiTouch</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#enableMouseSimulation()">enableMouseSimulation</a>(obj:DisplayObject,isStopPropagation:Boolean=true):BaseGesture</div>
+<div class="summaryTableDescription">[static]
+ Registers a MouseSimulation gesture instance with a DisplayObject instance specifically.</div>
+</td><td class="summaryTableOwnerCol">MultiTouch</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#disableGesture()">disableGesture</a>(gesture:BaseGesture):void</div>
+<div class="summaryTableDescription">[static]
+ Removes a touch gesture.</div>
+</td><td class="summaryTableOwnerCol">MultiTouch</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#disableAllGesture()">disableAllGesture</a>(obj:DisplayObject):void</div>
+<div class="summaryTableDescription">[static]
+ Removes all touch gestures that are registered to a certain display object.</div>
+</td><td class="summaryTableOwnerCol">MultiTouch</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getBlob()">getBlob</a>(touchID:int):Blob</div>
+<div class="summaryTableDescription">[static]
+ Get the instance of the global touch blob through touchID.</div>
+</td><td class="summaryTableOwnerCol">MultiTouch</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getRelatedBlobs()">getRelatedBlobs</a>(obj:DisplayObject):Array</div>
+<div class="summaryTableDescription">[static]
+ Get the collection of the global touch blobs which are captured by obj.</div>
+</td><td class="summaryTableOwnerCol">MultiTouch</td>
+</tr>
+
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getGlobalBlobs()">getGlobalBlobs</a>():Array</div>
+<div class="summaryTableDescription">[static]
+ Get the collection of the global touch blobs on the stage.</div>
+</td><td class="summaryTableOwnerCol">MultiTouch</td>
+</tr>
+
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="#init()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">init</td>
+<td class="detailHeaderParens">()</td>
+<td class="detailHeaderType">method</td>
+<td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function init(appContainer:DisplayObjectContainer,connectFailCallBack:Function=null,connectedCallBack:Function=null):void</code>
+<p><span class="summaryTableDescription"> Connect to Multi-Touch Server and initialize</span>.</p>
+  </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td>
+  <p>
+  	<code>
+    <span class="label">appContainer</span>:DisplayObjectContainer &mdash;  </code>A DisplayObectContainer instance. In Flex, it should be the instance of mx.core.Application(RIA) or mx.core.WindowedApplication(AIR);In flash, it should be the reference of stage.					    </p>
+  <p><span class="label">connectFailCallBack</span>:Function &mdash; </code>Callback function when multi-touch lib fail to connect with Multi-Touch Server. </p></td>
+</tr>
+</table>
+</div>
+
+<a name="#enableGesture()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">enableGesture</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function enableGesture(obj:DisplayObject,gesture:BaseGesture, <br>
+listener:Function=null,isStopPropagation:Boolean=true):BaseGesture</code>
+<p><span class="summaryTableDescription">Registers a gesture event listener object with a DisplayObject instance so that the DisplayObject instance can receive notification of a certain gesture event. if listener==null, gesture must be a manipulator, like DragScaleRotate, which handles all gesture function internally. By default, isStopPropagation==true, and the display object will call e.isStopPropagation() after handling with the TouchDown, TouchMove, TouchUp event, otherwise, the TouchDown, TouchMove, TouchUp event will bubble up to the parent of the display object instance.</span> </p>
+</p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><code><span class="label">obj</span>:DisplayObject &mdash;  A DisplayObject instance,touch event listener object.</code>  </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+
+<tr>
+<td width="20px"></td>
+<td><code><span class="label">gesture</span>:BaseGesture &mdash;  Touch gesture instance which handles with basic touch events the display object received.</code>  </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+
+<tr>
+<td width="20px"></td>
+<td><code><span class="label">listener</span>:Function(default = null) &mdash;  The listener function that processes the gesture event,<span class="summaryTableDescription">if listener==null, gesture must be a manipulator, like DragScaleRotate, which handles all gesture function internally.</span></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+
+<tr>
+<td width="20px"></td>
+<td><code><span class="label">isStopPropagation</span>:Boolean(default = true) &mdash;<span class="summaryTableDescription"> By default, isStopPropagation==true, and the display object will call e.isStopPropagation() after handling with the TouchDown, TouchMove, TouchUp event, otherwise, the TouchDown, TouchMove, TouchUp event will bubble up to the parent of the display object instance.</span></code></td>
+</tr>
+
+</table>
+</p><span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><code><span class="label">BaseGesture</span> &mdash;  Touch gesture instance.</code></td>
+</tr>
+</table>
+</div>
+
+<a name="#enableMouseSimulation()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">enableMouseSimulation</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function enableMouseSimulation(obj:DisplayObject,isStopPropagation:Boolean=true):BaseGesture</code>
+<p><span class="summaryTableDescription">Registers a MouseSimulation gesture instance with a DisplayObject instance specifically.</span></p>
+</p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><code><span class="label">obj</span>:DisplayObject &mdash;  A DisplayObject instance.</code>  </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td>
+<td><code><span class="label">isStopPropagation</span>:Boolean(default = true) &mdash;<span class="summaryTableDescription"> By default, isStopPropagation==true, and the display object will call e.isStopPropagation() after handling with the TouchDown, TouchMove, TouchUp event, otherwise, the TouchDown, TouchMove, TouchUp event will bubble up to the parent of the display object instance.</span></code>  </td>
+</tr>
+</table>
+</p><span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><code><span class="label">BaseGesture </span>&mdash;  MouseSimulation gesture instance.</code>  </td>
+</tr>
+</table>
+</div>
+
+<a name="#disableGesture()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">disableGesture</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function disableGesture(gesture:BaseGesture):void</code>
+<p><span class="summaryTableDescription">Removes a touch gesture</span>.</p>
+  </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><code><span class="label">gesture</span>:BaseGesture &mdash; Touch gesture instance which handles with basic touch events.</code>  </td>
+</tr>
+</table>
+</div>
+
+<a name="#disableAllGesture()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">disableAllGesture</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function disableAllGesture(obj:DisplayObject):void</code>
+<p><span class="summaryTableDescription">Removes all touch gestures that are registered to a certain display object.</span></p>
+  </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><code><span class="label">obj</span>:DisplayObject &mdash;  A DisplayObject instance.</code>  </td>
+</tr>
+</table>
+</div>
+
+<a name="#getBlob()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getBlob</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getBlob(touchID:int):Blob</code>
+<p><span class="summaryTableDescription">Get the instance of the global touch blob through touchID.</span></p>
+</p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><code><span class="label">touchID</span>:int &mdash; int value indicates id of the touch blob. </code></td>
+</tr>
+</table>
+</p><span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><code><span class="label">Blob </span>&mdash;  A Blob instance.</code>  </td>
+</tr>
+</table>
+</div>
+
+<a name="#getRelatedBlobs()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getRelatedBlobs</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getRelatedBlobs(obj:DisplayObject):Array</code>
+<p><span class="summaryTableDescription">Get the collection of the global touch blobs which are captured by obj.</span></p>
+</p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><code><span class="label">obj</span>:DisplayObject &mdash; DisplayObject instance. </code></td>
+</tr>
+</table>
+</p><span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><code><span class="label">Array </span>&mdash;  collection of the touch blobs.</code>  </td>
+</tr>
+</table>
+</div>
+
+<a name="#getGlobalBlobs()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getGlobalBlobs</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getGlobalBlobs():Array</code>
+<p><span class="summaryTableDescription">Get the collection of the global touch blobs on the stage.</span></p>
+</p><span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td>
+<td><code><span class="label">Array </span>&mdash;  collection of the touch blobs.</code>  </td>
+</tr>
+</table>
+</div>
+
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">
+<br>Aug 5  2010, PQLabs</center>
+</div>
+</body>
+</html>

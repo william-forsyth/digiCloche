@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					   xmlns:s="library://ns.adobe.com/flex/spark" 
+					   xmlns:mx="library://ns.adobe.com/flex/mx"
+					   applicationComplete="onComplete()">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			
+			import mx.controls.*;
+			
+			import pq.multitouch.*;
+			import pq.multitouch.events.*;
+			import pq.multitouch.gestures.*;
+			
+			private function onComplete():void
+			{
+				MultiTouch.init(this, connectFailed);
+				
+				stage.addChild(TouchViewer.getInstance());
+				
+				MultiTouch.enableGesture(group, new SingleDownGesture(), onDebugGesture);
+				MultiTouch.enableGesture(group, new SingleMoveGesture(), onDebugGesture);
+				MultiTouch.enableGesture(group, new SingleUpGesture(), onDebugGesture);
+				MultiTouch.enableGesture(group, new SingleTouchGesture(), onDebugGesture);
+				MultiTouch.enableGesture(group, new SingleClickGesture(), onDebugGesture);
+				
+				MultiTouch.enableGesture(group, new SecondDownGesture(), onDebugGesture);
+				MultiTouch.enableGesture(group, new SecondUpGesture(), onDebugGesture);
+				MultiTouch.enableGesture(group, new SecondClickGesture(), onDebugGesture);
+				
+				MultiTouch.enableGesture(group, new DualDownGesture(), onDebugGesture);
+				MultiTouch.enableGesture(group, new DualMoveGesture(), onDebugGesture);
+				MultiTouch.enableGesture(group, new OnePauseOneMoveGesture(), onDebugGesture);
+				MultiTouch.enableGesture(group, new DualUpGesture(), onDebugGesture);
+				MultiTouch.enableGesture(group, new DualClickGesture(), onDebugGesture);
+				
+				MultiTouch.enableGesture(group, new MultiDownGesture(), onDebugGesture);
+				MultiTouch.enableGesture(group, new MultiMoveGesture(), onDebugGesture);
+				MultiTouch.enableGesture(group, new MultiUpGesture(), onDebugGesture);
+				
+				////////////////////////////////////////////////////////////////////
+				MultiTouch.enableGesture(group, new FlickGesture(), onFlick);
+				
+				var dragMoveGes:DragMoveGesture = new DragMoveGesture();
+				dragMoveGes.minTouchCount = 1;
+				dragMoveGes.maxTouchCount = 1;
+				MultiTouch.enableGesture(group,dragMoveGes, onDrag);
+				
+				MultiTouch.enableGesture(group,new ZoomGesture(), onZoom);
+				
+				var gestrue:BaseGesture = MultiTouch.enableGesture(group,new RotateGesture(), onRotate);		
+				
+				MultiTouch.disableGesture( gestrue );
+				
+				// NOTE: you can disable all gestures that registered to a display object.
+				//MultiTouch.disableAllGesture(group);   
+				
+				var manipulateGes:ManipulateGesture = new ManipulateGesture();
+				manipulateGes.minTouchCount = 4;
+				manipulateGes.maxTouchCount = 10;
+				MultiTouch.enableGesture(group, manipulateGes, onManipulate);	         	
+			}								
+			
+			private function connectFailed():void
+			{				
+				Alert.show("Failed to connect with PQ-Multi-Touch Server!");
+			}
+			
+			private function onDebugGesture(e:BaseGestureEvent):void
+			{				
+				// NOTE: you can get local touch blobs in this way, too.
+				//				for (var i:int = 0; i < e.touchBlobs.length; i++)
+				//	            {                
+				//	                var bi:Blob = e.touchBlobs[i];
+				//	                if( bi )trace(bi.toString());
+				//	            }
+				//				trace("onDebugGesture" + e.toString());
+				
+				// NOTE: we strongly recommanded that you stop the propagation immediately. 
+				e.stopImmediatePropagation();				
+			}
+			
+			private function onFlick(e:FlickEvent):void
+			{
+				if( e.direction == Direction.DOWN )
+				{					
+					trace(" onFlick : " +  e.direction );
+				}
+				e.stopImmediatePropagation();
+			}
+			
+			private function onDrag(e:DragMoveEvent):void
+			{							
+				group.x += e.deltaOffsetX;
+				group.y += e.deltaOffsetY;
+				e.stopImmediatePropagation();
+			}
+			
+			private function onZoom(e:ZoomEvent):void
+			{				
+				group.scaleX *= e.deltaScale;
+				group.scaleY *= e.deltaScale;				
+				e.stopImmediatePropagation();
+			}
+			
+			private function onRotate(e:RotateEvent):void
+			{				
+				group.rotation += e.deltaAngle*180/Math.PI;
+				e.stopImmediatePropagation();
+			}
+			
+			private function onManipulate(e:ManipulateEvent):void
+			{
+				group.x += e.deltaVector.x;
+				group.y += e.deltaVector.y;
+				group.scaleX *= e.deltaScale;
+				group.scaleY *= e.deltaScale;
+				group.rotation += e.deltaAngle*180/Math.PI;
+				e.stopImmediatePropagation();
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<s:Group id="group" width="400" height="400">
+		<s:Rect width="100%" height="100%" alpha="0.4">
+			<s:fill><s:SolidColor color="0x0000FF" /></s:fill>
+		</s:Rect>
+	</s:Group>					
+</s:WindowedApplication>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:WindowedApplication xmlns:mx="http://www.adobe.com/2006/mxml"
+	layout="absolute" creationComplete="onComplete();">
+	<mx:Script>
+		<![CDATA[
+			
+			/**
+			 * 
+			 *  NOTE: 
+			 * 	   Requirements Specifications: 
+			 *     1> air2_b1_sdk_win_111709 (SDK) 
+			 *     2> air2_b1_runtime_win_111709.exe (runtime)
+			 * 
+			 * */ 
+			 
+			import flash.ui.Multitouch; 
+			import flash.ui.MultitouchInputMode;
+				
+			import pq.multitouch.*;
+			import pq.multitouch.events.*;
+			
+			private function onComplete():void
+			{
+				Multitouch.inputMode = MultitouchInputMode.TOUCH_POINT;
+				
+				TouchOptions.setInputMode(MTInputMode.SYSTEM_MODE);
+				
+				MultiTouch.init(this);							
+				
+				TouchOptions.isDoubleClickEnabled = true;
+												
+				MyCanvas.addEventListener(pq.multitouch.events.PQTouchEvent.TOUCH_DOWN, OnTouchDown);
+				MyCanvas.addEventListener(pq.multitouch.events.PQTouchEvent.TOUCH_MOVE, OnTouchMove);
+				MyCanvas.addEventListener(pq.multitouch.events.PQTouchEvent.TOUCH_UP, OnTouchUp);
+				MyCanvas.addEventListener(pq.multitouch.events.PQTouchEvent.TOUCH_CLICK, OnTouchClick);
+				MyCanvas.addEventListener(pq.multitouch.events.PQTouchEvent.TOUCH_DOUBLECLICK, OnTouchDoubleClick);				
+				MyCanvas.addEventListener(pq.multitouch.events.PQTouchEvent.TOUCH_OVER, OnTouchOver);
+				MyCanvas.addEventListener(pq.multitouch.events.PQTouchEvent.TOUCH_OUT, OnTouchOut);
+				
+			}								
+		
+			private function OnTouchDown(e:pq.multitouch.events.PQTouchEvent):void
+			{
+				trace("OnTouchDown" + e.toString());
+			}
+			
+			private function OnTouchMove(e:pq.multitouch.events.PQTouchEvent):void
+			{
+				trace("OnTouchMove" + e.toString());
+			}
+			
+			private function OnTouchUp(e:pq.multitouch.events.PQTouchEvent):void
+			{
+				trace("OnTouchUp" + e.toString());
+			}
+			
+			private function OnTouchClick(e:pq.multitouch.events.PQTouchEvent):void
+			{
+				trace("OnTouchClick" + e.toString());
+			}
+			
+			private function OnTouchDoubleClick(e:pq.multitouch.events.PQTouchEvent):void
+			{
+				trace("OnTouchDoubleClick" + e.toString());
+			}
+			
+			private function OnTouchOver(e:pq.multitouch.events.PQTouchEvent):void
+			{
+				trace("OnTouchOver" + e.toString());
+			}
+			
+			private function OnTouchOut(e:pq.multitouch.events.PQTouchEvent):void
+			{
+				trace("OnTouchOut" + e.toString());
+			}
+			
+		]]>
+	</mx:Script>
+	<mx:Canvas id="MyCanvas" backgroundColor="0x0000FF" 
+		horizontalCenter="0" verticalCenter="0" width="200" height="200"/>	
+</mx:WindowedApplication>
+

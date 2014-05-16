@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:WindowedApplication xmlns:mx="http://www.adobe.com/2006/mxml"
+	layout="absolute" creationComplete="onComplete();">
+	<mx:Script>
+		<![CDATA[
+				
+			import pq.multitouch.*;
+			import pq.multitouch.events.*;
+			
+			private function onComplete():void
+			{
+				MultiTouch.init(this);							
+				
+				TouchOptions.isDoubleClickEnabled = true;
+												
+				MyCanvas.addEventListener(pq.multitouch.events.PQTouchEvent.TOUCH_DOWN, OnTouchDown);
+				MyCanvas.addEventListener(pq.multitouch.events.PQTouchEvent.TOUCH_MOVE, OnTouchMove);
+				MyCanvas.addEventListener(pq.multitouch.events.PQTouchEvent.TOUCH_UP, OnTouchUp);
+				MyCanvas.addEventListener(pq.multitouch.events.PQTouchEvent.TOUCH_CLICK, OnTouchClick);
+				MyCanvas.addEventListener(pq.multitouch.events.PQTouchEvent.TOUCH_DOUBLECLICK, OnTouchDoubleClick);				
+				MyCanvas.addEventListener(pq.multitouch.events.PQTouchEvent.TOUCH_OVER, OnTouchOver);
+				MyCanvas.addEventListener(pq.multitouch.events.PQTouchEvent.TOUCH_OUT, OnTouchOut);
+				
+			}								
+		
+			private function OnTouchDown(e:pq.multitouch.events.PQTouchEvent):void
+			{
+				trace("OnTouchDown" + e.toString());
+			}
+			
+			private function OnTouchMove(e:pq.multitouch.events.PQTouchEvent):void
+			{
+				trace("OnTouchMove" + e.toString());
+			}
+			
+			private function OnTouchUp(e:pq.multitouch.events.PQTouchEvent):void
+			{
+				trace("OnTouchUp" + e.toString());
+			}
+			
+			private function OnTouchClick(e:pq.multitouch.events.PQTouchEvent):void
+			{
+				trace("OnTouchClick" + e.toString());
+			}
+			
+			private function OnTouchDoubleClick(e:pq.multitouch.events.PQTouchEvent):void
+			{
+				trace("OnTouchDoubleClick" + e.toString());
+			}
+			
+			private function OnTouchOver(e:pq.multitouch.events.PQTouchEvent):void
+			{
+				trace("OnTouchOver" + e.toString());
+			}
+			
+			private function OnTouchOut(e:pq.multitouch.events.PQTouchEvent):void
+			{
+				trace("OnTouchOut" + e.toString());
+			}
+			
+		]]>
+	</mx:Script>
+	<mx:Canvas id="MyCanvas" backgroundColor="0x0000FF" 
+		horizontalCenter="0" verticalCenter="0" width="200" height="200"/>	
+</mx:WindowedApplication>
+

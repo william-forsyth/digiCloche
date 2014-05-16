@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:WindowedApplication xmlns:mx="http://www.adobe.com/2006/mxml" 
+	horizontalScrollPolicy="off" verticalScrollPolicy="off"
+	layout="absolute" backgroundColor="0" creationComplete="onComplete();">
+	<mx:Script>
+		<![CDATA[
+			import pq.multitouch.events.GestureEvent;			
+			 
+			import pq.multitouch.*;
+			import pq.multitouch.manipulators.*;
+			
+			import customGesture.*;
+			private function onComplete():void
+			{
+				MultiTouch.init(this);													
+				MultiTouch.enableGesture(image, new CustomFlickGesture(), onFlick);																									
+			}			
+			
+			private function onFlick(e:CustomFlickEvent):void
+			{
+				trace(e.direction);
+			}
+		]]>
+	</mx:Script>
+	<mx:Image id="image" source="assets/1.png" />
+</mx:WindowedApplication>
