@@ -37,6 +37,6 @@ To use the multitouch library in your classes, please ensure the following:
 
     For dragging and other multitouch events, you can use:
 
-    MultiTouch.enableGesture(this,new MultiDragScaleRotate());
+    M.
 
 4)  If anything is not working, ask Will.
