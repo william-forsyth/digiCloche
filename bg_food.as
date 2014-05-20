@@ -1,1 +1,1 @@
-﻿package  {		import flash.display.MovieClip;			public class bg_food extends MovieClip {						public function bg_food() {			// constructor code			this.width = 480;			this.height = 270;		}	}	}
+﻿package  {		import flash.display.MovieClip;			public class bg_food extends MovieClip {						public function bg_food() {			// constructor code			this.width = 428;//480;			this.height = 252;//270;		}	}	}
