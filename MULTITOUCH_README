@@ -28,7 +28,10 @@ To use the multitouch library in your classes, please ensure the following:
 
     import pq.multitouch.*;
 
-3)  Add appropriate event handlers within your class file. For instance, if you
+3)  Add into your main class MultiTouch.init(stage);
+    If you want to debug touch points, add stage.addChild(TouchViewer.getInstance());
+
+4)  Add appropriate event handlers within your class file. For instance, if you
     are adding just a simple mouse click use:
 
     MultiTouch.enableMouseSimulation(this);
@@ -39,4 +42,4 @@ To use the multitouch library in your classes, please ensure the following:
 
     MultiTouch.enableGesture(this,new MultiDragScaleRotate());
 
-4)  If anything is not working, ask Will.
+5)  If anything is not working, ask Will.
