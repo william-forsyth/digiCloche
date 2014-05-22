@@ -1,0 +1,1 @@
+﻿package  {		import flash.display.MovieClip;			public class specialsPage extends MovieClip {				var img_head;				public function specialsPage() {			this.width = 428;//480;			this.height = 252;//270;						img_head = new specials();			img_head.y = -120;			this.addChild(img_head);			trace("why is it showing like that");		}	}	}

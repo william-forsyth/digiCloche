@@ -1,0 +1,1 @@
+﻿package  {		import flash.display.MovieClip;			public class sidesPage extends MovieClip {				var img_head;		public function sidesPage() {			this.width = 428;//480;			this.height = 252;//270;						img_head = new sides();			img_head.y = -120;			this.addChild(img_head);		}	}	}
