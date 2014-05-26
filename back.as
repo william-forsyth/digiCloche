@@ -1,0 +1,1 @@
+﻿package  {		import flash.display.MovieClip;			public class back extends MovieClip {						public function back() {						this.width = 28;			this.height = 20;		}	}	}
