@@ -1,4 +1,4 @@
-Whole Grain
+Whole-Grain Salami and Mozzarella Pizza
 A selection of our most popular toppings on a completely whole grain base
 4900
 1171
@@ -19,3 +19,5 @@ Mushroom
 Olives
 Mozzarella Cheese
 Tomato Sauce
+Basil leaves
+Red pepper
