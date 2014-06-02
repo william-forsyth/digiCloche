@@ -8,6 +8,7 @@
     import flash.display.Sprite;
     import flash.events.Event;
 	import flash.events.*;
+	import flash.display.*;
 	
 	import pq.multitouch.*;
 	import pq.multitouch.manipulators.MultiDragScaleRotate;
@@ -21,14 +22,27 @@
 		var bannerFont:Font = new helvs_light();
 		var bannerFormat:TextFormat = new TextFormat();
 		
+		var playerFont:Font = new helvs_light();
+		var playerFormat:TextFormat = new TextFormat();
+		
+		var overFormat:TextFormat = new TextFormat();
+		
 		var timer:TextField;
 		var timerText = 0;
 		
 		var banner:TextField;
+		var gameOver:TextField;
+		var winner:TextField;
+		
+		var topScore:TextField;
+		var bottomScore:TextField;
+		var scoreTop = 0;
+		var scoreBottom = 0;
 		
 		var gameTimer:Timer;
 		var bannerTimer:Timer;
 		var circleTimer:Timer;
+		var scoreTimer:Timer;
 		
 		var margherita;
 		var salami;
@@ -37,7 +51,11 @@
 		var meatlovers;
 		
 		var circles:Array;
+		var foodItems:Array;
+		var topArray:Array;
+		var bottomArray:Array;
 		
+		var rectangle:Shape = new Shape; // initializing the variable named rectangle
 		
 		public function gameBG() {
 			this.x = 0;
@@ -67,30 +85,77 @@
 			circleTimer.addEventListener(TimerEvent.TIMER, addFood);
 			circleTimer.start();
 			
+			scoreTimer = new Timer(10);
+			scoreTimer.addEventListener(TimerEvent.TIMER, scorer);
+			scoreTimer.start();
+			
 			timer = new TextField();
+			topScore = new TextField();
+			bottomScore = new TextField();
+			gameOver = new TextField();
+			winner = new TextField();
+			
 			this.addChild(timer);
+			this.addChild(topScore);
+			this.addChild(bottomScore);
 			
 			myTextFormat.font = myFont.fontName;
-			myTextFormat.size = 40;
+			myTextFormat.size = 200;
 			myTextFormat.color = 0xFFFFFF;
 			
 			timer.defaultTextFormat = myTextFormat;
 			timer.embedFonts = true;
 			timer.width = 400;
 			timer.wordWrap = true;
-			timer.x = 960;
-			timer.y = 540;
+			timer.x = 910;
+			timer.y = 420;
 			timer.text = timerText;
 			
+			playerFormat.font = playerFont.fontName;
+			playerFormat.size = 80;
+			playerFormat.color = 0xFFFFFF;
+			
+			overFormat.font = myFont.fontName;
+			overFormat.size = 800;
+			overFormat.color = 0xFFFFFF;
+			
+			topScore.defaultTextFormat = playerFormat;
+			topScore.embedFonts = true;
+			topScore.width = 500;
+			topScore.wordWrap = true;
+			topScore.x = 960;
+			topScore.y = 100;
+			topScore.text = scoreTop;
+			topScore.rotation = 180;
+			
+			bottomScore.defaultTextFormat = playerFormat;
+			bottomScore.embedFonts = true;
+			bottomScore.width = 500;
+			bottomScore.wordWrap = true;
+			bottomScore.x = 960;
+			bottomScore.y = 980;
+			bottomScore.text = scoreBottom;
+			
+			gameOver.defaultTextFormat = playerFormat;
+			gameOver.embedFonts = true;
+			gameOver.width = 500;
+			gameOver.wordWrap = true;
+			gameOver.x = 720;
+			gameOver.y = 480;
+			gameOver.text = 'GAME OVER';
+			
+			winner.defaultTextFormat = playerFormat;
+			winner.embedFonts = true;
+			winner.width = 1000;
+			winner.wordWrap = true;
+			winner.x = 1260;
+			winner.y = 540;
+			winner.text = '';
 			
 			
-			for each(var i in circles){
-				//i.addEventListener(MouseEvent.MOUSE_DOWN, startDragging);
-				//i.addEventListener(MouseEvent.MOUSE_UP, stopDragging);
-				i.startX = i.x;
-				i.startY = i.y;
-				MultiTouch.enableGesture(i,new MultiDragScaleRotate());
-			}
+			foodItems = [];
+			topArray = [];
+			bottomArray = [];
 			
 		}
 		
@@ -98,7 +163,23 @@
 			timer.text = timerText.toString();
 			timerText += 1;
 			
-			trace(timerText);
+			if (timerText > 60) {
+				this.gameTimer.stop();
+				this.circleTimer.stop();
+				this.scoreTimer.stop();
+				this.removeChild(timer);
+				this.addChild(gameOver);
+				
+				/*if (getWinner() == 'top'){
+					winner.text = 'TOP TEAM WINS';
+					winner.y = 270;
+					winner.rotation = 180;
+					this.addChild(winner);
+				}*/
+				
+				getWinner();
+			}
+			
 		}
 		
 		public function bannerLeave(e:TimerEvent) {
@@ -129,55 +210,152 @@
 			meatlovers.x = Math.floor(Math.random() * (1910 - 10 + 1)) + 10;
 			meatlovers.y = Math.floor(Math.random() * (1070 - 10 + 1)) + 10;
 			
-			circles = [margherita, veggie, meatlovers,supreme, salami];
+			circles = [margherita, veggie, meatlovers, supreme, salami];
 			
 			for each(var i in circles){
 				//i.addEventListener(MouseEvent.MOUSE_DOWN, startDragging);
 				//i.addEventListener(MouseEvent.MOUSE_UP, stopDragging);
-				i.startX = i.x;
-				i.startY = i.y;
+				/*i.startX = i.x;
+				i.startY = i.y;*/
 				MultiTouch.enableGesture(i,new MultiDragScaleRotate());
+				
+				//var posTimer = new Timer(10);
+				//posTimer.addEventListener(TimerEvent.TIMER, offScreen(i));
+				//posTimer.start();
+				
+				//trace(i.hitTestObject(rectangle));
+				
+				/*if(i.hitTestObject(rectangle)){
+					trace('SCORE');
+					
+					scoreBottom += 1;
+					bottomScore.text = scoreBottom;
+					
+				}*/
+				
+				if (i.y < 0) {
+					scoreBottom++;
+					bottomScore = scoreBottom;
+				}
 			}
 			
 			var random = Math.floor(Math.random() * (5));
 			
 			this.addChild(circles[random]);
+			foodItems.push(circles[random]);
 			
-			trace(random);
+			//trace(foodItems);
+			
+			/*trace(random);
 			
 			trace('x = ' + circles[random].x);
-			trace('y = ' + circles[random].y);
+			trace('y = ' + circles[random].y);*/
 			
 		}
 		
-	//	function stopDragging(event:MouseEvent):void{//, obj:Object) {
-	//		//obj.stopDrag();
-	//		
-	//		event.target.stopDrag();
-	//		
-	//		// check to see if the event target is touching target_mc using hitTestObject
-	//		
-	//		if (event.target.hitTestObject(img_head)) {
-	//			event.target.buttonMode = false;
-	//			event.target.x = -400;
-	//			event.target.y = -400;
-	//			
-	//			// move all circles OTHER than the current target back to their original positions
-	//			for each(var circleMC:MovieClip in circles){
-	//				if(event.target != circleMC)
-	//				{
-	//					circleMC.x = circleMC.startX;
-	//					circleMC.y = circleMC.startY;
-	//				}
-	//			}
-	//		}
-	//	//	else{
-	//	//		// only need to move the event target back if it was dropped outside of target_mc
-	//	//		event.target.x = event.target.startX;
-	//	//		event.target.y = event.target.startY;
-	//	//		event.target.buttonMode = true;
-	//	//	}
-	//	//}
+		
+		public function scorer(e:TimerEvent) {
+			for each (var thing in foodItems) {
+				if (thing.y < 0){
+					trace('BOOM');
+					
+					foodItems.splice(foodItems.indexOf(thing), 1);
+					
+					scoreBottom++;
+					bottomScore.text = scoreBottom.toString();
+					
+					this.removeChild(thing);
+				}
+				else if (thing.y > 1080) {
+					foodItems.splice(foodItems.indexOf(thing), 1);
+					
+					scoreTop++;
+					topScore.text = scoreTop.toString();
+					
+					this.removeChild(thing);
+				}
+				else if (thing.x < 0 || thing.x > 1920) {
+					foodItems.splice(foodItems.indexOf(thing), 1);
+					
+					this.removeChild(thing);
+				}
+			}
+			
+			//for (var thing:Number = 0; thing < foodItems.length; thing++) {
+			//	var anotherThing = foodItems[thing];
+			//	
+			//	if (anotherThing.x < 0) {
+			//		trace('BOOM');
+			//		
+			//		//foodItems.splice(foodItems.indexOf(thing);
+			//		
+			//		foodItems.splice(thing);
+			//		
+			//		scoreBottom++;
+			//		bottomScore.text = scoreBottom.toString();
+			//	}
+			//}
+		}
+		
+		public function getWinner() {
+			if (scoreTop > scoreBottom) {
+				
+				var winnerRec:Shape = new Shape; // initializing the variable named rectangle
+				winnerRec.graphics.beginFill(0x00FF00); // choosing the colour for the fill, here it is red
+				winnerRec.graphics.drawRect(0, 0, 1920,560); // (x spacing, y spacing, width, height)
+				winnerRec.graphics.endFill(); // not always needed but I like to put it in to end the fill
+				winnerRec.alpha = .5;
+				addChild(winnerRec); // adds the rectangle to the stage
+				
+				var loser:Shape = new Shape; // initializing the variable named rectangle
+				loser.graphics.beginFill(0xFF0000); // choosing the colour for the fill, here it is red
+				loser.graphics.drawRect(0, 560, 1920,560); // (x spacing, y spacing, width, height)
+				loser.graphics.endFill(); // not always needed but I like to put it in to end the fill
+				loser.alpha = .5;
+				addChild(loser); // adds the rectangle to the stage
+				
+				winner.text = 'TOP TEAM WINS';
+				winner.y = 270;
+				winner.rotation = 180;
+				this.addChild(winner);
+				
+				
+			}
+			else if (scoreTop < scoreBottom) {
+				var winnerRec:Shape = new Shape; // initializing the variable named rectangle
+				winnerRec.graphics.beginFill(0x00FF00); // choosing the colour for the fill, here it is red
+				winnerRec.graphics.drawRect(0, 560, 1920,560); // (x spacing, y spacing, width, height)
+				winnerRec.graphics.endFill(); // not always needed but I like to put it in to end the fill
+				winnerRec.alpha = .5;
+				addChild(winnerRec); // adds the rectangle to the stage
+				
+				var loser:Shape = new Shape; // initializing the variable named rectangle
+				loser.graphics.beginFill(0xFF0000); // choosing the colour for the fill, here it is red
+				loser.graphics.drawRect(0, 0, 1920,560); // (x spacing, y spacing, width, height)
+				loser.graphics.endFill(); // not always needed but I like to put it in to end the fill
+				loser.alpha = .5;
+				addChild(loser); // adds the rectangle to the stage
+				
+				winner.text = 'BOTTOM TEAM WINS';
+				winner.x = 490;
+				winner.y = 810;
+				this.addChild(winner);
+			}
+			else if (scoreTop == scoreBottom) {
+				var winnerRec:Shape = new Shape; // initializing the variable named rectangle
+				winnerRec.graphics.beginFill(0x0000FF); // choosing the colour for the fill, here it is red
+				winnerRec.graphics.drawRect(0, 0, 1920,1080); // (x spacing, y spacing, width, height)
+				winnerRec.graphics.endFill(); // not always needed but I like to put it in to end the fill
+				winnerRec.alpha = .5;
+				addChild(winnerRec); // adds the rectangle to the stage
+				
+				winner.text = 'DRAW';
+				winner.x = 840;
+				winner.y = 540;
+				this.addChild(winner);
+			}
+		}
+		
 	}
 	
 }
